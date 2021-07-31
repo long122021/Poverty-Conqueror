@@ -13,10 +13,8 @@ Poverty Conqueror is a smart recommendation website for poverty alleviation prog
 01. [Long Description](#Long-Description)
 02. [Demo Video](#Demo-Video)
 02. [Demo Web](#Demo-Web)
-
-[comment]: <> (03. [How it works]&#40;#How-it-works&#41;)
-
-[comment]: <> (06. [Project Roadmap]&#40;#Project-Roadmap&#41;)
+03. [How it works](#How-it-works)
+06. [Project Roadmap](#Project-Roadmap)
 07. [Getting Started](#Getting-Started)
 08. [IBM Cloud Services](#IBM-Cloud-Services)
 10. [Authors](#Authors)
