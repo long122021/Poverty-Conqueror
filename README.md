@@ -27,7 +27,7 @@ Poverty Conqueror is a smart recommendation website for poverty alleviation prog
 On September 25-27, 2015, 193 member states unanimously adopted "Transforming our World: The 2030 Agenda for Sustainable Development" at the United Nations Sustainable Development Summit with 17 sustainable development goals as the core. The three levels: society, economy, and environment, as well as important aspects related to peace, disputes and university institutions, and confirm the mobilization of implementation means, including financial resources, technology development and transfer, and capacity building. The agenda was officially launched on January 1, 2016, calling on all countries to take action to achieve 17 sustainable development goals in the next 15 years. As the largest developing country in the world, China has already achieved a complete alleviation of poverty through a variety of different programs. However, there are still 1.3 billion people living in multidimensional poverty in other parts of the world, accompanied by multiple problems such as hunger, high disease rates, and low education levels. The problem of poverty has become an important factor restricting human development.
 
 ## Long Description <a name="Long-Description"></a>
-[Long Description Document Link](https://github.com/long122021/Poverty-Conqueror/blob/master//PovertyConqueror.pptx)
+[Long Description Document Link](https://github.com/long122021/Poverty-Conqueror/blob/main/PovertyConqueror.pptx)
 
 ### How can technology help?
 
@@ -38,17 +38,17 @@ On September 25-27, 2015, 193 member states unanimously adopted "Transforming ou
 
 
 ## Demo Video <a name="Demo-Video"></a>
-[![Demo Video](https://github.com/long122021/Poverty-Conqueror/blob/master/cover.png?raw=ture)](https://www.youtube.com/watch?v=UYTDi53BQrs "DEMO VIDEO")
+[![Demo Video](https://github.com/long122021/Poverty-Conqueror/blob/main/cover.png?raw=ture)](https://www.youtube.com/watch?v=UYTDi53BQrs "DEMO VIDEO")
 
 ## Demo Web <a name="Demo-Web"></a>
-![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/master/1.png?raw=true)
-![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/master/2.png?raw=true)
-![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/master/3.png?raw=true)
-![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/master/4.png?raw=true)
+![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/main/1.png?raw=true)
+![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/main/2.png?raw=true)
+![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/main/3.png?raw=true)
+![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/main/4.png?raw=true)
 
 [comment]: <> (## How it works <a name="How-it-works"></a>)
 
-[comment]: <> (![picture alt]&#40;https://github.com/long122021/Water-Assistant/blob/master/Architecture.png?raw=true&#41;)
+[comment]: <> (![picture alt]&#40;https://github.com/long122021/Water-Assistant/blob/main/Architecture.png?raw=true&#41;)
 
 [comment]: <> (1. We use IoT water quality monitoring equipment to monitor water source information, and then store the data in the Cloudant database. IoT Plantform manages these devices so as to generate the water source map on Water Assistant.)
 
@@ -61,7 +61,7 @@ On September 25-27, 2015, 193 member states unanimously adopted "Transforming ou
 
 [comment]: <> (<div  align="center">    )
 
-[comment]: <> (<img src="https://github.com/long122021/Water-Assistant/blob/master/Roadmap.png?raw=true" width="50%" height="50%">)
+[comment]: <> (<img src="https://github.com/long122021/Water-Assistant/blob/main/Roadmap.png?raw=true" width="50%" height="50%">)
 
 [comment]: <> (</div>)
 
