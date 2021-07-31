@@ -43,30 +43,22 @@ On September 25-27, 2015, 193 member states unanimously adopted "Transforming ou
 ![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/main/3.png?raw=true)
 ![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/main/4.png?raw=true)
 
-[comment]: <> (## How it works <a name="How-it-works"></a>)
+## How it works <a name="How-it-works"></a>
 
-[comment]: <> (![picture alt]&#40;https://github.com/long122021/Water-Assistant/blob/main/Architecture.png?raw=true&#41;)
+![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/main/Architecture.png?raw=true)
 
-[comment]: <> (1. We use IoT water quality monitoring equipment to monitor water source information, and then store the data in the Cloudant database. IoT Plantform manages these devices so as to generate the water source map on Water Assistant.)
-
-[comment]: <> (2. To analyze the relationship between weather and water resources，we use 4 weather-related indicators of temperature, humidity, wind speed, and rainfall  as independent variables, water quality level and water level as dependent variables. IBM Cloud Pak for Data is used to clean and process historical data, and IBM Machine Learning is used to train the processed data to get the machine learning model. We select multiple machine learning models, such as decision tree, XGBoost, random forest, linear regression and so on. Machine Learning service automatically performs feature engineering, and comprehensively considers running time, accuracy and other indicators of different models to select the best. Finally, the weather data obtained from The Weather Company is applied on the best model to predict water quality and water depth in the future.)
-
-[comment]: <> (3. Constructing a chatting rebot based on Watson Assistant to provide users with self-service inquiries about water source information and water utilization related knowledge and skills.)
+Use IBM Watson Studio to train the industry recommendation model, input the region, match the latitude information in the database, input the model to generate plants and cultures, match the reference case from the database according to the output, and search for help information from the forum, and return the complete output to the user . The output can also be posted to the forum.
 
 
-[comment]: <> (## Project Roadmap <a name="Project-Roadmap"></a>)
 
-[comment]: <> (<div  align="center">    )
+## Project Roadmap <a name="Project-Roadmap"></a>
 
-[comment]: <> (<img src="https://github.com/long122021/Water-Assistant/blob/main/Roadmap.png?raw=true" width="50%" height="50%">)
+![picture alt](https://github.com/long122021/Poverty-Conqueror/blob/main/roadmap.png?raw=true)
 
-[comment]: <> (</div>)
+* In June 2021, a team will be formed. Collect relevant information and determine the target function.
+* In July, completed the architecture design and prototype development.
+* From August to the end of 2021, use IBM watson AI and Lot Cloud Service to complete model training, database collection and APIs. Complete front-end page development, forum interaction, and submit complete works.
 
-[comment]: <> (* In the first stage, we focused on using the Internet of Things technology to monitor water quality and water depth, build a water source map, and provide users with the possibility to view water source information at any time.)
-
-[comment]: <> (* In the second stage, we pay attention to train models predicting water source changes, provide users with water quality and water depth trends, and propose countermeasures to deal with water-related problems.)
-
-[comment]: <> (* In the third stage, we improve the chatting robot to realize self-service query of the nearest clean water source and navigate to it. According to users’  needs, we recommend water resources utilization schemes such as agricultural irrigation and animal husbandry.)
 
 ## Getting Started <a name="Getting-Started"></a>
 
@@ -88,9 +80,9 @@ On September 25-27, 2015, 193 member states unanimously adopted "Transforming ou
 
 
 ## Authors <a name="Authors"></a>
-* Mingwei Zhang：Creative Analyst, System Designer
-* Mengqi Cai：Product and software developers
+* Mingwei Zhang：Architecture Analyst
+* Po Gao：System Designer
+* Mengqi Cai：Web developer，UI designer
 * Yaoyang Liu：Product and software developers
 * Xiaoming Yang：Artificial intelligence engineer
-* Tianhao Wang：Web developer，UI designer
 
