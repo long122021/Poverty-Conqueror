@@ -1,0 +1,178 @@
+export default {
+  gaugeoption: {
+    series: [{
+      type: "gauge",
+      data: [{ value: 65, name: '水质评分' }],
+      splitNumber: 10,
+      min: 0,
+      max: 100,
+      startAngle: 220,
+      endAngle: -40,
+      title: {
+        show: true,
+        offsetCenter: [0, '60%'],
+        textStyle: {
+          color: 'rgb(65, 131, 249)',
+          fontSize: 15
+        }
+      },
+
+      axisLabel: {
+        distance: -50,
+        show: true
+      },
+      splitLine: { show: false },
+      axisTick: { show: false },
+      position: 'outer',
+      axisLine: {
+        lineStyle: {
+          color: [[0.65, '#2079f8'], [1, '#dbe9fb']],
+          width: 15
+        }
+      },
+      itemStyle: {
+        show: true,
+        lineStyle: {
+          normal: {
+            color: {
+              type: 'liner',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{ offset: 0, color: '#1657cc' }, { offset: 1, color: '#1657cc' }]
+            }
+          }
+        }
+      },
+
+      datail: { show: true }
+    }]
+  },
+  lineoption: {
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      show: false,
+      axisLine: { show: false },
+      axisTick: { show: false },
+      axisLable: { show: false },
+      splitLine: { show: false },
+      splitArea: { show: false },
+      data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    },
+    yAxis: {
+      type: 'value',
+      boundaryGap: false,
+      show: false,
+      axisLine: { show: false },
+      axisTick: { show: false },
+      axisLable: { show: false },
+      splitLine: { show: false },
+      splitArea: { show: false }
+    },
+    grid: { x: 20, y: 20, x2: 20 },
+    series: [{
+      type: 'line',
+      data: [5, 15, 7, 7, 18, 3, 15, 7, 16, 7, 18],
+      smooth: true,
+      color: ['white'],
+      showSymbol: false,
+      itemStyle: {
+        normal: {
+          areaStyle: {
+            color: {
+              type: 'liner',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{ offset: 0, color: '#1657cc' }, { offset: 1, color: '#1657cc' }]
+            }
+          }
+        }
+      }
+    }]
+  },
+  mapOption: {
+    tooltip: {
+      trigger: 'item',
+      formatter: function formatter(param) {
+        return param.name;
+      }
+    },
+    visualMap: {
+      min: 0,
+      max: 100,
+      x: '50',
+      y: '400',
+      textStyle: { color: '#5B5857' },
+      text: ['高', '低'],
+      color: ['#58C13E', '#99FF81', '#8FCD95', '#D6D6AA', '#BEBDC0']
+    },
+    series: [{
+      name: '',
+      type: 'map',
+      roam: true,
+      scaleLimit: { max: 3, min: 0.5 },
+      map: '中国',
+      itemStyle: {
+        normal: {
+          label: {
+            show: true,
+            formatter: function formatter(param) {
+              return param.name;
+            },
+            textStyle: { fontSize: 12, fontWeight: 'bold', color: '#5B5857' }
+          },
+          borderColor: '#1991C5',
+          borderWidth: 1
+        },
+        emphasis: { label: { show: true } }
+      },
+      data: [{ value: 65, name: "安徽省" }],
+      mapLocation: { x: 'center', y: 'center', width: '90%', height: '90%' }
+    }]
+  },
+  lineoption2: {
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      show: true,
+      axisLine: { show: false },
+      axisTick: { show: false },
+      axisLable: { show: false },
+      splitLine: { show: false },
+      splitArea: { show: false },
+      data: ["四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月", "一月", "二月", "三月"]
+    },
+    yAxis: {
+      type: 'value',
+      name: "未来水量趋势",
+      nameTextStyle: {
+        opacity: 0.85,
+        fontFamily: 'PingFangSC-Medium',
+        fontSize: 14,
+        color: '#000000'
+      },
+      boundaryGap: false,
+      show: true,
+      axisLine: { show: false },
+      axisTick: { show: false },
+      axisLable: { show: false },
+      splitLine: { show: false },
+      splitArea: { show: false }
+    },
+    tooltip: {
+      trigger: 'axis'
+    },
+    series: [{
+      name: "未来水量趋势",
+      type: 'line',
+      data: [10, 25, 36, 78, 13, 0, 30, 20, 50, 70, 10, 40],
+      color: ['#126af8'],
+      areaStyle: { color: 'black' }
+    }]
+  }
+
+};

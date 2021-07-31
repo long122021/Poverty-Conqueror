@@ -1,0 +1,96 @@
+import Vue from 'vue';
+import Router from 'vue-router';
+
+import routes from './data/routes.js';
+
+
+Vue.use(Router);
+
+var router = new Router({
+  base: _basepath_,
+  routes: routes
+});
+router.beforeEach(function (to, from, next) {
+  if (to.meta.fullScreen) {} else {}
+
+  var SSOPRole = sessionStorage.SSOPRole;
+  var SSOPRank1 = sessionStorage.SSOPRank;
+
+  var IsMaintenanceRole = sessionStorage.IsMaintenanceRole === "1";
+
+  var ProvincePrefixNum = sessionStorage.ProvincePrefixNum;
+
+  var status = 'go';
+
+  var requireAuth = to.meta.requireAuth;
+
+  var toPath = to.path;
+
+  var isBranchLimit = requireAuth === '1' && ProvincePrefixNum === '88' && toPath.indexOf("/home/3") > -1;
+
+  var isSystemUpdate = requireAuth === 'system-update' && IsMaintenanceRole;
+
+  var isProvinceSwitch = SSOPRank1 === '5' && requireAuth === 'province-switch';
+  var isAccessRecord = SSOPRank1 === '5' && requireAuth === 'access-record';
+
+  if (SSOPRole === '3') {
+    if (requireAuth === '3' || requireAuth === '2' || requireAuth === '1' || isSystemUpdate || requireAuth === 'authen' || isProvinceSwitch || isAccessRecord) {
+      if (isBranchLimit) {
+        status = 'stay';
+      } else {
+        status = 'go';
+      }
+    } else {
+      status = 'stay';
+    }
+  } else if (SSOPRole === '2') {
+    if (requireAuth === '2' || requireAuth === '1' || requireAuth === 'map-manage' || isSystemUpdate || requireAuth === 'authen') {
+      if (isBranchLimit) {
+        status = 'stay';
+      } else {
+        status = 'go';
+      }
+    } else {
+      status = 'stay';
+    }
+  } else if (SSOPRole === '1') {
+    if (requireAuth === '1' || isSystemUpdate || requireAuth === 'authen') {
+      if (isBranchLimit) {
+        status = 'stay';
+      } else {
+        status = 'go';
+      }
+    } else {
+      status = 'stay';
+    }
+  } else {
+    if (requireAuth === 'authen') {
+      status = 'go';
+    } else {
+      status = 'home';
+    }
+  }
+  if (to.meta.title === "认证页") {
+    document.title = '认证页';
+  }
+  if (status === 'go') {
+    next();
+  } else if (status === 'stay') {
+    next(false);
+  } else if (status === 'home') {
+    if (toPath === '/') {
+      next();
+    } else {
+      next('/');
+    }
+  }
+});
+router.afterEach(function (to) {
+  if (to.meta.title === "认证页") {
+    document.title = '认证页';
+  } else {
+    document.title = '统一用户认证管理平台';
+  }
+});
+
+export default router;

@@ -1,0 +1,66 @@
+export default {
+  downloadFile: function downloadFile(url) {
+    var link = document.createElement("a");
+    link.style.display = "none";
+    link.href = url;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  },
+  formatDate: function formatDate(v) {
+    var date = new Date(v);
+    var curYear = date.getFullYear();
+    var curMonth = date.getMonth() + 1;
+    var curDate = date.getDate();
+    var strMonth = curMonth < 10 ? "0" + curMonth : "" + curMonth;
+    var strDate = curDate < 10 ? "0" + curDate : "" + curDate;
+    var day = curYear + "-" + strMonth + "-" + strDate;
+    return day;
+  },
+  inputBranchIdLength: function inputBranchIdLength(v, n) {
+    v = v.replace(/[^0-9a-zA-Z]/g, '');
+    if (v.length > n) {
+      v = v.slice(0, n);
+    }
+    return v;
+  },
+  inputNumberLength: function inputNumberLength(v, n) {
+    v = v.replace(/\D/g, '');
+    if (v.length > n) {
+      v = v.slice(0, n);
+    }
+    return v;
+  },
+  inputStrLength: function inputStrLength(v, n) {
+    if (v.length > n) {
+      v = v.slice(0, n);
+    }
+    return v;
+  },
+  disabledPage: function disabledPage(flag) {
+    var arr1 = document.getElementsByClassName("btn-prev");
+    var arr2 = document.getElementsByClassName("btn-next");
+    var arr3 = document.getElementsByClassName("bfe-pagination__editor");
+    if (flag) {
+      for (var i = 0; i < arr1.length; i++) {
+        arr1[i].setAttribute("disabled", true);
+      }
+      for (var _i = 0; _i < arr2.length; _i++) {
+        arr2[_i].setAttribute("disabled", true);
+      }
+      for (var _i2 = 0; _i2 < arr3.length; _i2++) {
+        arr3[_i2].setAttribute("disabled", true);
+      }
+    } else {
+      for (var _i3 = 0; _i3 < arr1.length; _i3++) {
+        arr1[_i3].removeAttribute("disabled");
+      }
+      for (var _i4 = 0; _i4 < arr2.length; _i4++) {
+        arr2[_i4].removeAttribute("disabled");
+      }
+      for (var _i5 = 0; _i5 < arr3.length; _i5++) {
+        arr3[_i5].removeAttribute("disabled");
+      }
+    }
+  }
+};

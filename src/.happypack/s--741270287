@@ -1,0 +1,36 @@
+import axios from 'axios';
+import router from '../router';
+
+function CheckLoginState() {
+  if (!localStorage.getItem('PovertyToken')) {
+    router.push("/");
+    return false;
+  }
+  return true;
+}
+
+function ApiPost(url, formData) {
+  formData.token = localStorage.getItem('PovertyToken');
+  return axios.post(url, formData);
+}
+
+function ApiGet(url) {
+  return axios.get(url);
+}
+
+export var ApiUserLogin = function ApiUserLogin() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    console.log(formData);
+    return ApiGet("/Api/inst/select/searchResult");
+  }
+};
+
+export var ApiUserLogin2 = function ApiUserLogin2() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    return ApiPost("/Api/inst/select/searchResult", formData);
+  }
+};

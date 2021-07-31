@@ -1,0 +1,91 @@
+import axios from 'axios';
+import router from '../router';
+
+function CheckLoginState() {
+  if (!localStorage.getItem('PovertyToken')) {
+    router.push("/");
+    return false;
+  }
+  return true;
+}
+
+function ApiPost(url, formData) {
+  formData.sessionId = localStorage.getItem('PovertyToken');
+  return axios.post(url, formData, { timeout: 1500, headers: { 'Content-Type': 'application/json' } });
+}
+
+export var ApiLogin = function ApiLogin() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  return ApiPost("/Api/login", formData);
+};
+
+export var ApiRegister = function ApiRegister() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  return ApiPost("/Api/regist", formData);
+};
+
+export var ApiChangePass = function ApiChangePass() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    return ApiPost("/Api/changePass", formData);
+  }
+};
+
+export var Apilogout = function Apilogout() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    return ApiPost("/Api/logout", formData);
+  }
+};
+
+export var ApiAllAreas = function ApiAllAreas() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    return ApiPost("/Api/allAreas", formData);
+  }
+};
+
+export var ApiAmhara = function ApiAmhara() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    return ApiPost("/Api/allAreas/amhara", formData);
+  }
+};
+
+export var ApiAllTypes = function ApiAllTypes() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    return ApiPost("/Api/allTypes", formData);
+  }
+};
+
+export var ApilistHelps = function ApilistHelps() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    return ApiPost("/Api/listHelps", formData);
+  }
+};
+
+export var ApiAddOrUpdate = function ApiAddOrUpdate() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    return ApiPost("/Api/addOrUpdate", formData);
+  }
+};
+
+export var ApilistInfos = function ApilistInfos() {
+  var formData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (CheckLoginState()) {
+    return ApiPost("/Api/listInfos", formData);
+  }
+};

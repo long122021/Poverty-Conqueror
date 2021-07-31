@@ -1,0 +1,25 @@
+import Vue from 'vue';
+import Router from 'vue-router';
+import routes from './data/routes.js';
+
+
+Vue.use(Router);
+
+var router = new Router({
+  base: _basepath_,
+  routes: routes
+});
+router.beforeEach(function (to, from, next) {
+  if (to.meta.needLogin) {
+    if (localStorage.getItem('PovertyToken')) {
+      next();
+    } else {
+      next('/');
+    }
+  } else {
+    next();
+  }
+});
+
+
+export default router;

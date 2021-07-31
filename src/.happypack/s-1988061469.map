@@ -1,0 +1,1 @@
+{"version":3,"sources":["src\\i18n\\zh.js"],"names":["menu","home","topbar","changelan"],"mappings":"AAAA,eAAe;AACbA,QAAM;AACJC,UAAM;AADF,GADO;AAIbC,UAAQ;AACNC,eAAW;AADL;AAJK,CAAf","file":"zh.js","sourceRoot":"D:/07-VUE/PovertyConqueror","sourcesContent":["export default {\r\n  menu: {\r\n    home: '首页'\r\n  },\r\n  topbar: {\r\n    changelan: 'English'\r\n  }\r\n}\r\n"]}

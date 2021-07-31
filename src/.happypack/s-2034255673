@@ -1,0 +1,12 @@
+import _Object$assign from 'babel-runtime/core-js/object/assign';
+
+import en from './en';
+import zh from './zh';
+
+import Bfeen from 'bfe-ui/lib/locale/lang/en';
+import Bfezh from 'bfe-ui/lib/locale/lang/zh-CN';
+
+export default {
+  'zh': _Object$assign(zh, Bfezh),
+  'en': _Object$assign(en, Bfeen)
+};
